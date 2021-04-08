@@ -18,6 +18,8 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
+RUN composer install
+
 COPY nginx.conf /etc/nginx/sites-available/default
 COPY supervisord.conf /etc/supervisord.conf
 
